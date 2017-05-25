@@ -1,0 +1,24 @@
+{"1.1.0",
+[{<<"amqp_client">>,{pkg,<<"amqp_client">>,<<"3.0.2">>},0},
+ {<<"bson">>,
+  {git,"git://github.com/comtihon/bson-erlang",
+       {ref,"14308ab927cfa69324742c3de720578094e0bb19"}},
+  1},
+ {<<"mongodb">>,
+  {git,"git://github.com/comtihon/mongodb-erlang",
+       {ref,"df59a67dcb7a2a2e734ff5f3a0a18817c76e8410"}},
+  0},
+ {<<"pbkdf2">>,
+  {git,"git://github.com/comtihon/erlang-pbkdf2.git",
+       {ref,"7076584f5377e98600a7e2cb81980b2992fb2f71"}},
+  1},
+ {<<"poolboy">>,
+  {git,"git://github.com/comtihon/poolboy.git",
+       {ref,"04ea8a5479b273a052942755ebdc42c9e318d907"}},
+  1},
+ {<<"rabbit_common">>,{pkg,<<"rabbit_common">>,<<"3.0.2">>},1}]}.
+[
+{pkg_hash,[
+ {<<"amqp_client">>, <<"6CAB975896676237BD56BB6AFAE89EBF6FEEF6D99DA5492C8BB62390BC473DF3">>},
+ {<<"rabbit_common">>, <<"B0CCADD3E60DAD87466E0371DCFA2FDDED76EC4FDFBD14899863B7631F0348CB">>}]}
+].
