@@ -21,14 +21,15 @@ init() ->
 
 loop(MongoConnection, Connection, Channel) ->
     receive
-        {#'basic.deliver'{}, #amqp_msg{payload = Body}} ->
-            io:format(" [~p] Received ~p~n", [self(), Body]),
+        {#'basic.deliver'{routing_key = Topic}, #amqp_msg{payload = Body}} ->
+            io:format(" [~p] Received ~p ~p~n", [self(), Body, Topic]),
             if Body =:= <<"stop">> -> 
                     amqp_connection:close(Connection),
                     ok;
                true -> 
                     Timestamp = get_timestamp(),
-                    mc_worker_api:insert(MongoConnection, <<"sensor_data">>, [ #{<<"time">> => Timestamp, <<"data">> => Body} ]),
+                    [_,_,DeviceID] = binary:split(Topic, <<".">>, [global]),
+                    mc_worker_api:insert(MongoConnection, <<"sensor_data">>, [ #{<<"time">> => Timestamp, <<"data">> => erlang:binary_to_integer(Body), <<"device_id">> => erlang:binary_to_integer(DeviceID)} ]),
                     loop(MongoConnection, Connection, Channel)
             end
             %% loop(Channel)
