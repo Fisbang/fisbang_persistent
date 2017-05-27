@@ -3,13 +3,14 @@
   {vsn, "0.1.0"},
   {registered, []},
   {mod, { fisbang_persistent_app, []}},
+  {included_applications, [amqp_client]},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    mongodb
    ]},
   {env,[]},
   {modules, []},
-
   {maintainers, []},
   {licenses, []},
   {links, []}

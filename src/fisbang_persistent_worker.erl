@@ -37,4 +37,4 @@ loop(MongoConnection, Connection, Channel) ->
 
 get_timestamp() ->
   {Mega, Sec, Micro} = os:timestamp(),
-  (Mega*1000000 + Sec)*1000 + round(Micro/1000).
+  (Mega*1000000 + Sec) + round(Micro/10000000).

@@ -1,5 +1,7 @@
-{"1.1.0",
-[{<<"amqp_client">>,{pkg,<<"amqp_client">>,<<"3.0.2">>},0},
+[{<<"amqp_client">>,
+  {git,"git://github.com/jbrisbin/amqp_client.git",
+       {ref,"d50aec00b94f0766a048b4eceaf25ddfdeeb1d86"}},
+  0},
  {<<"bson">>,
   {git,"git://github.com/comtihon/bson-erlang",
        {ref,"14308ab927cfa69324742c3de720578094e0bb19"}},
@@ -16,9 +18,7 @@
   {git,"git://github.com/comtihon/poolboy.git",
        {ref,"04ea8a5479b273a052942755ebdc42c9e318d907"}},
   1},
- {<<"rabbit_common">>,{pkg,<<"rabbit_common">>,<<"3.0.2">>},1}]}.
-[
-{pkg_hash,[
- {<<"amqp_client">>, <<"6CAB975896676237BD56BB6AFAE89EBF6FEEF6D99DA5492C8BB62390BC473DF3">>},
- {<<"rabbit_common">>, <<"B0CCADD3E60DAD87466E0371DCFA2FDDED76EC4FDFBD14899863B7631F0348CB">>}]}
-].
+ {<<"rabbit_common">>,
+  {git,"https://github.com/jbrisbin/rabbit_common.git",
+       {ref,"80814606ae23cc820c74e443383e192cd69ec030"}},
+  1}].
